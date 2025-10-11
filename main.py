@@ -53,7 +53,6 @@ def sortiraj_i_ispisi(rjecnik_frekvencija, broj_rijeci=15):
         index += 1
     print("-" * 30)
 
-
 if __name__=="__main__":
     filepath = "tekst.txt"
     print(f"----- Učitavam tekst iz datoteke: {filepath} -----")
