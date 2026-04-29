@@ -17,16 +17,13 @@ Ključne funkcionalnosti:
 
 ## B. Metodologija obrade podataka (Data Wrangling)
 
-Iz mape _moji_mars_podaci_ učitavamo CSV datoteke _mars_lokacije.csv_ i _mars_uzorci.csv_. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.
-
+**Iz mape _moji_mars_podaci_ učitavamo CSV datoteke _mars_lokacije.csv_ i _mars_uzorci.csv_. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.**
 
 _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")_
 
 _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
-
 Datoteke se zatim spajaju po ključu _ID_Uzorka_.
-
 
 _df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
