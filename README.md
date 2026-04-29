@@ -4,30 +4,30 @@
 
 ## A. Izvršni sažetak (Executive Summary)
 
-**Analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Program identificira znanstveno relevantne lokacije s potencijalnim indikatorima biološke aktivnosti te generira navigacijske naloge za autonomni istraživački sustav. Program učitava dvije relacijske CSV tablice s podacima o lokacijama uzorkovanja i senzorskim očitanjima, spaja ih, filtrira anomalije te generira strukturirani JSON navigacijski nalog za robota-istraživača.**
+* **Analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Program identificira znanstveno relevantne lokacije s potencijalnim indikatorima biološke aktivnosti te generira navigacijske naloge za autonomni istraživački sustav. Program učitava dvije relacijske CSV tablice s podacima o lokacijama uzorkovanja i senzorskim očitanjima, spaja ih, filtrira anomalije te generira strukturirani JSON navigacijski nalog za robota-istraživača.**
 
-**Ključne funkcionalnosti:**
+* **Ključne funkcionalnosti:**
 
-* Učitavanje i spajanje relacijskih CSV podataka
-* Validacija i filtriranje senzorskih anomalija
-* Geoprostorna vizualizacija (5 grafova)
-* Generiranje JSON navigacijskog naloga (_nexus.json_)
+* * Učitavanje i spajanje relacijskih CSV podataka
+* * Validacija i filtriranje senzorskih anomalija
+* * Geoprostorna vizualizacija (5 grafova)
+* * Generiranje JSON navigacijskog naloga (_nexus.json_)
 
 ---
 
 ## B. Metodologija obrade podataka (Data Wrangling)
 
-**Iz mape _moji_mars_podaci_ učitavamo CSV datoteke _mars_lokacije.csv_ i _mars_uzorci.csv_. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.**
+* **Iz mape _moji_mars_podaci_ učitavamo CSV datoteke _mars_lokacije.csv_ i _mars_uzorci.csv_. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.**
 
 _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")_
 
 _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
-**Datoteke se zatim spajaju po ključu _ID_Uzorka_.**
+* **Datoteke se zatim spajaju po ključu _ID_Uzorka_.**
 
 _df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
-**Podatke zatim moramo filtrirati pomoću varijable _df_filtrirano_ i anomalije zapisujemo u varijablu _df_anomalije_.**
+* **Podatke zatim moramo filtrirati pomoću varijable _df_filtrirano_ i anomalije zapisujemo u varijablu _df_anomalije_.**
 
 _df_filtrirano = df_spojeno[df_spojeno["Temp_Tla_C"] < 150]_
 
