@@ -1,14 +1,14 @@
-ANALIZA PODATAKA KRATERA JEZERO – TEHNIČKA DOKUMENTACIJA
+Simulacija stvarnih podataka: Vizualizacija i uplink
 
 ---
 
-## A. IZVRŠNI SAŽETAK
+## A. Izvršni sažetak (Executive Summary)
 
 Ovaj projekt implementira analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Ulazni podaci sastoje se od dviju relacijskih CSV tablica koje sadržavaju informacije o lokacijama uzorkovanja i pripadajućim senzorskim očitanjima (temperatura tla, pH vrijednost, udio vode, detekcija metana i organskih molekula). Primarni cilj analize je identificirati znanstveno relevantne lokacije koje pokazuju potencijalne indikatore biološke aktivnosti te generirati strukturirani, strojno čitljiv navigacijski nalog (JSON payload) za autonomni istraživački sustav.
 
 ---
 
-## B. METODOLOGIJA OBRADE PODATAKA
+## B. Metodologija obrade podataka (Data Wrangling)
 
 Podaci se učitavaju iz odvojenih izvora te se spajaju korištenjem relacijskog ključa "ID_Uzorka". Primijenjen je unutarnji spoj (inner join) kako bi se osigurala konzistentnost zapisa između lokacijskih i senzorskih podataka.
 
@@ -29,7 +29,7 @@ Ovakva separacija omogućuje očuvanje integriteta analize, dok se istovremeno z
 
 ---
 
-## C. GEOPROSTORNA ANALIZA I VIZUALIZACIJA
+## C. Geoprostorna analiza i vizualizacija
 
 1. Korelacija temperature i udjela vode
    
@@ -85,7 +85,7 @@ Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS 
 
 ---
 
-## D. KOMUNIKACIJSKI PROTOKOL
+## D. Komunikacijski protokol (JSON Uplink)
 
 Izlazni sustav generira strukturirani JSON objekt koji sadržava listu kandidata za istraživanje. Svaki zapis uključuje identifikator uzorka, geopoziciju i skup akcija koje robot treba izvršiti.
 
@@ -109,7 +109,7 @@ Generiranje ovog izlaza implementirano je korištenjem iterativne petlje kroz fi
 
 ---
 
-## E. INŽENJERSKI DNEVNIK
+## E. Inženjerski dnevnik (Troubleshooting Log)
 
 1. Problem: Neispravno učitavanje CSV datoteka
    Simptom:
@@ -147,5 +147,3 @@ Rješenje:
 Izračun minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihova primjena na parametar extent.
 
 ---
-
-KRAJ DOKUMENTA
