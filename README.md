@@ -31,7 +31,7 @@ Ovakva separacija omogućuje očuvanje integriteta analize, dok se istovremeno z
 
 ## C. Geoprostorna analiza i vizualizacija
 
-1. Korelacija temperature i udjela vode
+1. Odnos temperature i vlažnosti tla
    
    <img src="assets/graph1_temp_h2o.png" width="500">
 
@@ -40,7 +40,7 @@ Ovakva separacija omogućuje očuvanje integriteta analize, dok se istovremeno z
 Interpretacija:
 Uočava se da uzorci s detektiranim metanom često koreliraju s umjerenim temperaturnim rasponima i povišenim udjelom vode, što je u skladu s hipotezama o mogućim mikrobiološkim procesima.
 
-2. Geoprostorna distribucija dubine bušenja
+2. Prostorna raspodjela dubine bušenja
    
    <img src="assets/graph2_heatmap_depth.png" width="500">
 
@@ -49,7 +49,7 @@ Uočava se da uzorci s detektiranim metanom često koreliraju s umjerenim temper
 Interpretacija:
 Veće dubine bušenja koncentrirane su u specifičnim zonama, što može ukazivati na ciljano uzorkovanje geološki zanimljivih slojeva.
 
-3. Distribucija metanskih signala
+3. Lokacije pozitivne detekcije metana
    
    <img src="assets/graph3_methane_scatter.png" width="500">
    
@@ -58,7 +58,7 @@ Veće dubine bušenja koncentrirane su u specifičnim zonama, što može ukaziva
 Interpretacija:
 Metanski signali nisu uniformno raspoređeni, već pokazuju klastersko ponašanje, što sugerira lokalizirane izvore emisije.
 
-4. Karta kandidata za život
+4. Geografska analiza uzoraka u krateru Jezero
    
    <img src="assets/graph4_scatter_plot.png" width="500">
    
@@ -72,7 +72,7 @@ Takve lokacije označene su markerom visoke vidljivosti.
 Interpretacija:
 Ove točke predstavljaju prioritete za daljnje istraživanje jer kombiniraju više biološki relevantnih indikatora.
 
-5. Satelitska karta s geoprostornim poravnanjem
+5. Završna mapa misije (Satelitski prikaz Jezero Kratera)
    
    <img src="assets/graph5_jezero_mission_map.jpg" width="500">
    
