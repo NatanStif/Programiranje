@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import json
+import requests
 
 
 df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep = ";", decimal = ",")
@@ -156,3 +158,57 @@ plt.ylabel('Geografska širina')
 
 plt.savefig('graph5_jezero_mission_map.jpg')
 plt.close()
+
+
+misija = {
+    "misija": "Nexus",
+    "akcije": []
+}
+
+for index, red in kandidati.iterrows():
+
+    akcija = {
+        "ID_Uzorka": int(red['ID_Uzorka']),
+        "lokacija": {
+            "lat": float(red['GPS_LAT']),
+            "lon": float(red['GPS_LONG'])
+        },
+
+        "naredbe": [
+            {
+                "tip": "NAVIGACIJA",
+                "opis": "Robot se kreće do zadane lokacije"
+            },
+
+            {
+                "tip": "SONDIRANJE",
+                "dubina_cm": float(red['Dubina_Busenja_cm'])
+            },
+
+            {
+                "tip": "SLANJE_PODATAKA",
+                "parametri": {
+                    "temperatura": float(red['Temp_Tla_C']),
+                    "vlaga": float(red['H2O_Postotak']),
+                    "metan": red['Metan_Senzor'],
+                    "organske_molekule": bool(red['Organske_Molekule'])
+                }
+            }
+        ]
+    }
+
+    misija["akcije"].append(akcija)
+
+json_paket = json.dumps(misija, indent=4)
+
+with open("nexus.json", "w") as f:
+    f.write(json_paket)
+
+url = "https://webhook.site/#!/view/03f33f00-c3a0-4a66-8b06-63f1af147efa"
+
+response = requests.post(url, json=misija)
+
+if response.status_code == 200:
+    print("Uspješno poslano")
+else:
+    print(f"Greška pri slanju, error {response.status_code}")
