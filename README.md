@@ -4,7 +4,14 @@ Simulacija stvarnih podataka: Vizualizacija i uplink
 
 ## A. Izvršni sažetak (Executive Summary)
 
-Ovaj projekt implementira analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Ulazni podaci sastoje se od dviju relacijskih CSV tablica koje sadržavaju informacije o lokacijama uzorkovanja i pripadajućim senzorskim očitanjima (temperatura tla, pH vrijednost, udio vode, detekcija metana i organskih molekula). Primarni cilj analize je identificirati znanstveno relevantne lokacije koje pokazuju potencijalne indikatore biološke aktivnosti te generirati strukturirani, strojno čitljiv navigacijski nalog (JSON payload) za autonomni istraživački sustav.
+Analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Program identificira znanstveno relevantne lokacije s potencijalnim indikatorima biološke aktivnosti te generira navigacijske naloge za autonomni istraživački sustav. Program učitava dvije relacijske CSV tablice s podacima o lokacijama uzorkovanja i senzorskim očitanjima, spaja ih, filtrira anomalije te generira strukturirani JSON navigacijski nalog za robota-istraživača.
+
+Ključne funkcionalnosti:
+
+* Učitavanje i spajanje relacijskih CSV podataka
+* Validacija i filtriranje senzorskih anomalija
+* Geoprostorna vizualizacija (5 grafova)
+* Generiranje JSON navigacijskog naloga
 
 ---
 
