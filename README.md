@@ -38,7 +38,7 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 
 ## C. Geoprostorna analiza i vizualizacija
 
-1. Odnos temperature i vlažnosti tla
+**1. Odnos temperature i vlažnosti tla**
    
    <img src="assets/graph1_temp_h2o.png" width="500">
 
@@ -46,15 +46,15 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 
 Interpretacija:
 
-2. Prostorna raspodjela dubine bušenja
+**2. Prostorna raspodjela dubine bušenja**
    
    <img src="assets/graph2_heatmap_depth.png" width="500">
 
-   Vizualizacija koristi kolornu mapu (viridis) za prikaz dubine bušenja po koordinatama.
+* **Graf prikazuje koordinate svih lokacija bušenja te koliko se duboko bušilo.**
 
 Interpretacija:
 
-3. Lokacije pozitivne detekcije metana
+**3. Lokacije pozitivne detekcije metana**
    
    <img src="assets/graph3_methane_scatter.png" width="500">
    
@@ -62,7 +62,7 @@ Interpretacija:
 
 Interpretacija:
 
-4. Geografska analiza uzoraka u krateru Jezero
+**4. Geografska analiza uzoraka u krateru Jezero**
    
    <img src="assets/graph4_scatter_plot.png" width="500">
    
@@ -75,7 +75,7 @@ Takve lokacije označene su markerom visoke vidljivosti.
 
 Interpretacija:
 
-5. Završna mapa misije (Satelitski prikaz Jezero Kratera)
+**5. Završna mapa misije (Satelitski prikaz Jezero Kratera)**
    
    <img src="assets/graph5_jezero_mission_map.jpg" width="500">
    
