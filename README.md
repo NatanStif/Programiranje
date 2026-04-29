@@ -17,9 +17,10 @@ Ključne funkcionalnosti:
 
 ## B. Metodologija obrade podataka (Data Wrangling)
 
-Učitavamo CSV datoteke mars_lokacije.csv i mars_uzorci.csv. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.
+Iz mape moji_mars_podaci učitavamo CSV datoteke mars_lokacije.csv i mars_uzorci.csv. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.
 
 _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")_
+
 _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
 Datoteke se zatim spajaju po ključu ID_Uzorka.
