@@ -44,7 +44,7 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 
 * **Graf prikazuje odnos između temperature i vlažnosti tla, uz dodatnu dimenziju prisutnosti metana (hue).**
 
-Interpretacija:
+* **Može se uočiti da je metan prisutan na lokacijama sa niskom temperaturom i visokom količinom vlage**
 
 **2. Prostorna raspodjela dubine bušenja**
    
@@ -52,15 +52,15 @@ Interpretacija:
 
 * **Graf prikazuje koordinate svih lokacija bušenja te koliko se duboko bušilo.**
 
-Interpretacija:
+* **Može se uočiti da se većinom buši dublje u određenim zonama**
 
 **3. Lokacije pozitivne detekcije metana**
    
    <img src="assets/graph3_methane_scatter.png" width="500">
    
-   Pozitivni i negativni metanski signali prikazani su različitim bojama (crveno/plavo).
+* **Graf prikazuje pozitivne i negativne metanske signale**
 
-Interpretacija:
+* **Može se uočiti da su metanski signali raspoređeni po zonama**
 
 **4. Geografska analiza uzoraka u krateru Jezero**
    
