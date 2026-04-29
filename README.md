@@ -11,7 +11,7 @@ Ključne funkcionalnosti:
 * Učitavanje i spajanje relacijskih CSV podataka
 * Validacija i filtriranje senzorskih anomalija
 * Geoprostorna vizualizacija (5 grafova)
-* Generiranje JSON navigacijskog naloga
+* Generiranje JSON navigacijskog naloga (nexus.json)
 
 ---
 
