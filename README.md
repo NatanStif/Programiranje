@@ -45,7 +45,6 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 * **Graf prikazuje odnos između temperature i vlažnosti tla, uz dodatnu dimenziju prisutnosti metana (hue).**
 
 Interpretacija:
-Uočava se da uzorci s detektiranim metanom često koreliraju s umjerenim temperaturnim rasponima i povišenim udjelom vode, što je u skladu s hipotezama o mogućim mikrobiološkim procesima.
 
 2. Prostorna raspodjela dubine bušenja
    
@@ -54,7 +53,6 @@ Uočava se da uzorci s detektiranim metanom često koreliraju s umjerenim temper
    Vizualizacija koristi kolornu mapu (viridis) za prikaz dubine bušenja po koordinatama.
 
 Interpretacija:
-Veće dubine bušenja koncentrirane su u specifičnim zonama, što može ukazivati na ciljano uzorkovanje geološki zanimljivih slojeva.
 
 3. Lokacije pozitivne detekcije metana
    
@@ -63,7 +61,6 @@ Veće dubine bušenja koncentrirane su u specifičnim zonama, što može ukaziva
    Pozitivni i negativni metanski signali prikazani su različitim bojama (crveno/plavo).
 
 Interpretacija:
-Metanski signali nisu uniformno raspoređeni, već pokazuju klastersko ponašanje, što sugerira lokalizirane izvore emisije.
 
 4. Geografska analiza uzoraka u krateru Jezero
    
@@ -77,7 +74,6 @@ Metanski signali nisu uniformno raspoređeni, već pokazuju klastersko ponašanj
 Takve lokacije označene su markerom visoke vidljivosti.
 
 Interpretacija:
-Ove točke predstavljaju prioritete za daljnje istraživanje jer kombiniraju više biološki relevantnih indikatora.
 
 5. Završna mapa misije (Satelitski prikaz Jezero Kratera)
    
