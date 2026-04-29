@@ -27,12 +27,11 @@ _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decima
 
 _df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
+**Podatke zatim moramo filtrirati pomoću varijable _df_filtrirano_ i anomalije zapisujemo u varijablu _df_anomalije_.**
 
-Ključni korak u obradi podataka predstavlja filtriranje anomalija definiranjem logičkih uvjeta nad DataFrame objektom. Uvedeni su sljedeći validacijski kriteriji:
+_df_filtrirano = df_spojeno[df_spojeno["Temp_Tla_C"] < 150]_
 
-* temperatura tla: [-100, 40] °C
-* pH vrijednost: [0, 14]
-* udio vode: [0, 100] %
+_df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 
 Ovi pragovi nisu proizvoljni, već reflektiraju fizikalno-kemijska ograničenja realnih mjerenja. Vrijednosti izvan tih intervala interpretiraju se kao posljedica senzorskog šuma, pogrešaka kalibracije ili prijenosa podataka.
 
