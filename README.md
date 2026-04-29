@@ -27,21 +27,13 @@ _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decima
 
 _df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
-* **Podatke zatim moramo filtrirati pomoću varijable _df_filtrirano_ i anomalije zapisujemo u varijablu _df_anomalije_.**
+* **Podaci se zatim filtriraju pomoću varijable _df_filtrirano_ i anomalije se zapisuju u varijablu _df_anomalije_.**
 
 _df_filtrirano = df_spojeno[df_spojeno["Temp_Tla_C"] < 150]_
 
 _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
 
-Ovi pragovi nisu proizvoljni, već reflektiraju fizikalno-kemijska ograničenja realnih mjerenja. Vrijednosti izvan tih intervala interpretiraju se kao posljedica senzorskog šuma, pogrešaka kalibracije ili prijenosa podataka.
-
-Algoritamski pristup temelji se na booleanskom maskiranju, čime se omogućuje efikasno razdvajanje skupa podataka na:
-
-1. validne zapise (df_cisto)
-2. anomalne zapise (df_anomalije)
-
-Ovakva separacija omogućuje očuvanje integriteta analize, dok se istovremeno zadržava evidencija potencijalno problematičnih mjerenja za naknadnu forenzičku analizu.
-
+* **Podaci se filtriraju kako bi se izbjegli podaci sa greškama koji bi mogli kvariti podatke u daljnjem dijelu programa.**
 ---
 
 ## C. Geoprostorna analiza i vizualizacija
@@ -50,7 +42,7 @@ Ovakva separacija omogućuje očuvanje integriteta analize, dok se istovremeno z
    
    <img src="assets/graph1_temp_h2o.png" width="500">
 
-   Graf prikazuje odnos između temperature tla i postotka vode, uz dodatnu dimenziju prisutnosti metana (hue).
+* **Graf prikazuje odnos između temperature i vlažnosti tla, uz dodatnu dimenziju prisutnosti metana (hue).**
 
 Interpretacija:
 Uočava se da uzorci s detektiranim metanom često koreliraju s umjerenim temperaturnim rasponima i povišenim udjelom vode, što je u skladu s hipotezama o mogućim mikrobiološkim procesima.
