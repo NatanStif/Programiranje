@@ -1,12 +1,12 @@
-Simulacija stvarnih podataka: Vizualizacija i uplink
+**Simulacija stvarnih podataka: Vizualizacija i uplink**
 
 ---
 
 ## A. Izvršni sažetak (Executive Summary)
 
-Analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Program identificira znanstveno relevantne lokacije s potencijalnim indikatorima biološke aktivnosti te generira navigacijske naloge za autonomni istraživački sustav. Program učitava dvije relacijske CSV tablice s podacima o lokacijama uzorkovanja i senzorskim očitanjima, spaja ih, filtrira anomalije te generira strukturirani JSON navigacijski nalog za robota-istraživača.
+**Analitički pipeline za obradu geoprostornih i kemijskih podataka prikupljenih unutar kratera Jezero na Marsu. Program identificira znanstveno relevantne lokacije s potencijalnim indikatorima biološke aktivnosti te generira navigacijske naloge za autonomni istraživački sustav. Program učitava dvije relacijske CSV tablice s podacima o lokacijama uzorkovanja i senzorskim očitanjima, spaja ih, filtrira anomalije te generira strukturirani JSON navigacijski nalog za robota-istraživača.**
 
-Ključne funkcionalnosti:
+**Ključne funkcionalnosti:**
 
 * Učitavanje i spajanje relacijskih CSV podataka
 * Validacija i filtriranje senzorskih anomalija
@@ -23,7 +23,7 @@ _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decima
 
 _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
-Datoteke se zatim spajaju po ključu _ID_Uzorka_.
+**Datoteke se zatim spajaju po ključu _ID_Uzorka_.**
 
 _df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
