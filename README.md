@@ -17,7 +17,14 @@ Ključne funkcionalnosti:
 
 ## B. Metodologija obrade podataka (Data Wrangling)
 
-Podaci se učitavaju iz odvojenih izvora te se spajaju korištenjem relacijskog ključa "ID_Uzorka". Primijenjen je unutarnji spoj (inner join) kako bi se osigurala konzistentnost zapisa između lokacijskih i senzorskih podataka.
+Učitavamo CSV datoteke mars_lokacije.csv i mars_uzorci.csv. Obje datoteke koriste ";" kao separator i "," kao decimalni znak.
+
+_df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")
+df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
+
+Datoteke se zatim spajaju po ključu ID_Uzorka.
+
+_df_spojeno = pd.merge(df_lokacije, df_uzorci, on="ID_Uzorka")_
 
 Ključni korak u obradi podataka predstavlja filtriranje anomalija definiranjem logičkih uvjeta nad DataFrame objektom. Uvedeni su sljedeći validacijski kriteriji:
 
