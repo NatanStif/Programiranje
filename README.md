@@ -115,6 +115,7 @@ Generiranje ovog izlaza implementirano je korištenjem iterativne petlje kroz fi
 ## E. Inženjerski dnevnik (Troubleshooting Log)
 
 * **Tokom pisanja programa dolazimo do 2 problema koji se tokom programa moraju rješiti**
+
 **1. Neispravno učtavanje CSV datoteke**
 * **Problem nastaje zbog korištenja drugačije oznake separatora i decimalne točke u datotekama _mars_lokacije.csv_ i _mars_uzorci.csv_.**
 * **Problem možemo rješiti definiranjem parametra prilikom učitavanja datoteka.**
