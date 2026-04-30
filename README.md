@@ -128,6 +128,6 @@ _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decima
 * **Problem nastaje zbog problema s poravnanjem padataka i slike. Program nema pravilno definirane granice.**
 * **Problem se može rješiti korištenjem minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihovom primjenom na parametar extent.**
 
-a
+_extent_koordinate = [df_fitrirano['GPS_LONG'].min(), df_fitrirano[+GPS_LONG'].max(), df_filtrirano['GPS_LAT'].min(), df_filtrirano['GPS_LAT'].max()]_
 
 ---
