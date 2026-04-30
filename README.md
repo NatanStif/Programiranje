@@ -117,7 +117,9 @@ Generiranje ovog izlaza implementirano je korištenjem iterativne petlje kroz fi
 * **Tokom pisanja programa dolazimo do 2 problema koji se tokom programa moraju rješiti**
 
 **1. Neispravno učtavanje CSV datoteke**
+
 * **Problem nastaje zbog korištenja drugačije oznake separatora i decimalne točke u datotekama _mars_lokacije.csv_ i _mars_uzorci.csv_.**
+  
 * **Problem možemo rješiti definiranjem parametra prilikom učitavanja datoteka.**
 
 _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")_
@@ -125,7 +127,9 @@ _df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decima
 _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
 **2. Neispravno prikazivanje satelitske slike**
+
 * **Problem nastaje zbog problema s poravnanjem padataka i slike. Program nema pravilno definirane granice.**
+
 * **Problem se može rješiti korištenjem minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihovom primjenom na parametar extent.**
 
 _extent_koordinate = [df_fitrirano['GPS_LONG'].min(), df_fitrirano[+GPS_LONG'].max(), df_filtrirano['GPS_LAT'].min(), df_filtrirano['GPS_LAT'].max()]_
