@@ -90,25 +90,41 @@ Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS 
 
 ## D. Komunikacijski protokol (JSON Uplink)
 
-Izlazni sustav generira strukturirani JSON objekt koji sadržava listu kandidata za istraživanje. Svaki zapis uključuje identifikator uzorka, geopoziciju i skup akcija koje robot treba izvršiti.
+* **Kraj programa stvara JSON objekt koji koristimo za izvoz. Objekt sadrži listu kandidata za istraživanje, indetifikatore uzorka, geopoziciju i akcije koje robot treba izvršiti.**
 
-Primjer strukture:
-{
-"kandidati": [
-{
-"ID_Uzorka": 101,
-"GPS_LAT": 18.45,
-"GPS_LONG": 77.52,
-"akcije": [
-{"tip": "NAVIGACIJA"},
-{"tip": "SONDIRANJE"},
-{"tip": "SLANJE_PODATAKA"}
-]
-}
-]
+* **Podaci su generirani pomoću petlje kroz filtrirani DataFrame. Njome se omogućuje dinamičko skaliranje sustava čime izbjegavamo hardkodiranje.**
+
+for index, red in kandidati.iterrows():
+
+_akcija = {
+   "ID_Uzorka": int(red['ID_Uzorka']),
+   "lokacija": {
+      "lat": float(red['GPS_LAT']),
+      "lon": float(red['GPS_LONG'])
+   },
+   
+   "naredbe": [
+      {
+         "tip": "NAVIGACIJA",
+         "opis": "Robot se kreće do zadane lokacije"
+      },
+      {
+         "tip": "SONDIRANJE",
+         "dubina_cm": float(red['Dubina_Busenja_cm'])
+      },
+      {
+         "tip": "SLANJE_PODATAKA",
+         "parametri": {
+            "temperatura": float(red['Temp_Tla_C']),
+            "vlaga": float(red['H2O_Postotak']),
+            "metan": red['Metan_Senzor'],
+            "organske_molekule": bool(red['Organske_Molekule'])
+         }
+      }
+   ]
 }
 
-Generiranje ovog izlaza implementirano je korištenjem iterativne petlje kroz filtrirani DataFrame. Time se omogućuje dinamičko skaliranje sustava – broj kandidata nije unaprijed definiran (izbjegnut je hardcoding), već ovisi isključivo o rezultatima analize.
+misija["akcije"].append(akcija)_
 
 ---
 
