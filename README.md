@@ -127,4 +127,5 @@ _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decima
 * **Problem nastaje zbog problema s poravnanjem padataka i slike. Program nema pravilno definirane granice.**
 * **Problem se može rješiti korištenjem minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihovom primjenom na parametar extent.**
 
+
 ---
