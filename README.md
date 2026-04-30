@@ -96,19 +96,19 @@ Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS 
 
 for index, red in kandidati.iterrows():
 
-_akcija = {
+_akcija = {_
 
-   "ID_Uzorka": int(red['ID_Uzorka']),
+   _"ID_Uzorka": int(red['ID_Uzorka']),_
    
-   "lokacija": {
+   _"lokacija": {_
    
       "lat": float(red['GPS_LAT']),
       
       "lon": float(red['GPS_LONG'])
       
-   },
+   _},_
    
-   "naredbe": [
+   _"naredbe": [_
    
       {
       
@@ -144,12 +144,12 @@ _akcija = {
          
       }
       
-   ]
+   _]_
    
-}
+_}_
 
 
-misija["akcije"].append(akcija)_
+_misija["akcije"].append(akcija)_
 
 ---
 
