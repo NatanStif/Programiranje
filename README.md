@@ -114,39 +114,17 @@ Generiranje ovog izlaza implementirano je korištenjem iterativne petlje kroz fi
 
 ## E. Inženjerski dnevnik (Troubleshooting Log)
 
-1. Problem: Neispravno učitavanje CSV datoteka
-   Simptom:
-   Podaci su bili nepravilno parsirani zbog korištenja krivog separatora i decimalnog znaka.
+* **Tokom pisanja programa dolazimo do 2 problema koji se tokom programa moraju rješiti**
+**1. Neispravno učtavanje CSV datoteke**
+* **Problem nastaje zbog korištenja drugačije oznake separatora i decimalne točke u datotekama _mars_lokacije.csv_ i _mars_uzorci.csv_.**
+* **Problem možemo rješiti definiranjem parametra prilikom učitavanja datoteka.**
 
-Uzrok:
-Datoteke su koristile ";" kao separator i "," kao decimalni znak.
+_df_lokacije = pd.read_csv("moji_mars_podaci/mars_lokacije.csv", sep=";", decimal=",")_
 
-Rješenje:
-Eksplicitno definiranje parametara prilikom učitavanja:
-sep=";" i decimal=","
+_df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decimal=",")_
 
----
-
-2. Problem: Gubitak zapisa prilikom spajanja tablica
-   Simptom:
-   Nakon merge operacije broj redaka bio je manji od očekivanog.
-
-Uzrok:
-Nepodudaranje ID vrijednosti između tablica.
-
-Rješenje:
-Analiza presjeka ID-eva i potvrda da inner join uklanja nepodudarne zapise. Po potrebi bi se mogao koristiti left join, ali je u ovom slučaju konzistentnost podataka imala prioritet.
-
----
-
-3. Problem: Neispravno prikazivanje satelitske slike
-   Simptom:
-   Podaci nisu bili poravnati sa slikom.
-
-Uzrok:
-Nedostatak pravilno definiranih granica (extent).
-
-Rješenje:
-Izračun minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihova primjena na parametar extent.
+**2. Neispravno prikazivanje satelitske slike**
+* **Problem nastaje zbog problema s poravnanjem padataka i slike. Program nema pravilno definirane granice.**
+* **Problem se može rješiti korištenjem minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihovom primjenom na parametar extent.**
 
 ---
