@@ -97,32 +97,57 @@ Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS 
 for index, red in kandidati.iterrows():
 
 _akcija = {
+
    "ID_Uzorka": int(red['ID_Uzorka']),
+   
    "lokacija": {
+   
       "lat": float(red['GPS_LAT']),
+      
       "lon": float(red['GPS_LONG'])
+      
    },
    
    "naredbe": [
+   
       {
+      
          "tip": "NAVIGACIJA",
+         
          "opis": "Robot se kreće do zadane lokacije"
+         
       },
+      
       {
+      
          "tip": "SONDIRANJE",
+         
          "dubina_cm": float(red['Dubina_Busenja_cm'])
+         
       },
+      
       {
+      
          "tip": "SLANJE_PODATAKA",
+         
          "parametri": {
+         
             "temperatura": float(red['Temp_Tla_C']),
+            
             "vlaga": float(red['H2O_Postotak']),
+            
             "metan": red['Metan_Senzor'],
+            
             "organske_molekule": bool(red['Organske_Molekule'])
+            
          }
+         
       }
+      
    ]
+   
 }
+
 
 misija["akcije"].append(akcija)_
 
