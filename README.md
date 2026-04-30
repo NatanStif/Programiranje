@@ -66,14 +66,7 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
    
    <img src="assets/graph4_scatter_plot.png" width="500">
    
-   Na temelju filtriranih podataka izdvojene su lokacije koje zadovoljavaju uvjete:
-
-* pozitivan metanski signal
-* prisutnost organskih molekula
-
-Takve lokacije označene su markerom visoke vidljivosti.
-
-Interpretacija:
+* ****
 
 **5. Završna mapa misije (Satelitski prikaz Jezero Kratera)**
    
