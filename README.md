@@ -95,7 +95,7 @@ Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS 
 * **Podaci su generirani pomoću petlje kroz filtrirani DataFrame. Njome se omogućuje dinamičko skaliranje sustava čime izbjegavamo hardkodiranje.**
 
 
-for index, red in kandidati.iterrows():
+_for index, red in kandidati.iterrows():_
 
       _akcija = {_
 
@@ -143,8 +143,8 @@ for index, red in kandidati.iterrows():
             
          }
       }
-   ]
-}
+   _]_
+_}_
 
 
 _misija["akcije"].append(akcija)_
