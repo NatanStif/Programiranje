@@ -66,18 +66,20 @@ _df_anomalije  = df_spojeno[df_spojeno["Temp_Tla_C"] > 149]_
    
    <img src="assets/graph4_scatter_plot.png" width="500">
    
-* ****
+* **Graf crvenim zvjezdama prikazuje kandidate za život.**
+* **Crvenom su zvijezdom označene samo lokacije koje održavaju potrebne uvjete za život.**
 
 **5. Završna mapa misije (Satelitski prikaz Jezero Kratera)**
    
    <img src="assets/graph5_jezero_mission_map.jpg" width="500">
    
-   Podaci su projicirani na satelitsku sliku korištenjem parametra "extent", koji definira granice prikaza slike u koordinatnom sustavu podataka:
+* **Graf prikazuje sliku kratera Jezero i žutim su zvijezdama označene kritične zone bušenja.**
+* **Za projeciranje na sliku koristi se parametar "extent" kako točke ne bi završile izvan slike kratera.**
 
-[min_long, max_long, min_lat, max_lat]
+_extent_koordinate = [df_fitrirano['GPS_LONG'].min(), df_fitrirano['GPS_LONG'].max(), df_filtrirano['GPS_LAT'].min(), df_filtrirano['GPS_LAT'].max()]_
 
-Tehnički značaj:
-Extent mapiranje omogućuje transformaciju piksel koordinata slike u realne GPS koordinate. Time se postiže precizno preklapanje analitičkih rezultata s vizualnim kontekstom terena, što je ključno za navigaciju autonomnih sustava.
+* **Tehnički značaj:**
+* **Pomoću parametra extent možemo pretvoriti piksel koordinate slike u realne GPS koordinate. To je bitno kako bi graf mogao precizno prikazati rezultate.**
 
 ---
 
@@ -164,6 +166,6 @@ _df_uzorci   = pd.read_csv("moji_mars_podaci/mars_uzorci.csv",   sep=";", decima
 
 * **Problem se može rješiti korištenjem minimalnih i maksimalnih GPS koordinata iz skupa podataka i njihovom primjenom na parametar extent.**
 
-_extent_koordinate = [df_fitrirano['GPS_LONG'].min(), df_fitrirano[+GPS_LONG'].max(), df_filtrirano['GPS_LAT'].min(), df_filtrirano['GPS_LAT'].max()]_
+_extent_koordinate = [df_fitrirano['GPS_LONG'].min(), df_fitrirano['GPS_LONG'].max(), df_filtrirano['GPS_LAT'].min(), df_filtrirano['GPS_LAT'].max()]_
 
 ---
